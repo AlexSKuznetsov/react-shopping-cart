@@ -14,6 +14,12 @@ const Card = styled.div`
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   border-radius: 2px;
   background-color: white;
+
+  &:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border: 0.5px solid blueviolet;
+  }
 `;
 
 const ProductPrice = styled.p`
@@ -75,7 +81,7 @@ const PlusMinus = styled.button`
   }
 `;
 
-function Item() {
+function Item({ item }) {
   const [count, setCount] = useState(1);
 
   function handleChange(e) {
@@ -90,16 +96,20 @@ function Item() {
   }
 
   function decrement() {
-    setCount((prevCount) => {
-      return prevCount - 1;
-    });
+    if (count > 1) {
+      setCount((prevCount) => {
+        return prevCount - 1;
+      });
+    }
   }
 
   return (
     <Card>
-      <ProductName>Название продукта</ProductName>
-      <Image src="/broccoli.jpg" alt="broccoli" />
-      <ProductPrice>Price: 100р.</ProductPrice>
+      <ProductName>{item.name}</ProductName>
+      <Image src={item.img} alt="broccoli" />
+      <p>Price per 1 kg</p>
+      <ProductPrice>{item.price} р.</ProductPrice>
+
       <ChangeCount>
         <PlusMinus onClick={decrement}> - </PlusMinus>
         <Count value={count} onChange={handleChange}></Count>
