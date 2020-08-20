@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import AddToCardButton from "../addToCartButton";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import AddToCardButton from '../addToCartButton';
 
 const Card = styled.div`
   display: flex;
@@ -17,15 +17,15 @@ const Card = styled.div`
 `;
 
 const ProductPrice = styled.p`
-  @import url("https://fonts.googleapis.com/css?family=Roboto");
-  font-family: "Roboto", sans-serif;
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 14px;
 `;
 
 const ProductName = styled.div`
-  @import url("https://fonts.googleapis.com/css?family=Roboto");
-  font-family: "Roboto", sans-serif;
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: bold;
 `;

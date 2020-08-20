@@ -1,6 +1,6 @@
-import React from "react";
-import Product from "../product";
-import styled from "styled-components";
+import React from 'react';
+import Product from '../product';
+import styled from 'styled-components';
 
 const ProductList = styled.div`
   display: flex;
