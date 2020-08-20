@@ -2,7 +2,7 @@
 
 Simple React Shopping Cart
 
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/sivadass/react-shopping-cart) [![Github file size](https://img.shields.io/github/size/webcaetano/craft/build/phaser-craft.min.js.svg)](https://github.com/sivadass/react-shopping-cart) [![David](https://img.shields.io/david/expressjs/express.svg)](https://github.com/sivadass/react-shopping-cart)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/AlexSKuznetsov/react-shopping-cart) [![Github file size](https://img.shields.io/github/size/webcaetano/craft/build/phaser-craft.min.js.svg)](https://github.com/AlexSKuznetsov/react-shopping-cart) [![David](https://img.shields.io/david/expressjs/express.svg)]https://github.com/AlexSKuznetsov/react-shopping-cart)
 
 
 ## Dependencies
