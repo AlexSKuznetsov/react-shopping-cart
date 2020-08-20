@@ -1,8 +1,9 @@
-import React from "react";
-import Products from "./components/pages/products";
-import styled from "styled-components";
+import React from 'react';
+import Products from './pages/products';
+import Navbar from './components/navbar';
+import styled from 'styled-components';
 
-const Body = styled.div`
+const Main = styled.div`
   display: flex;
   justify-content: center;
   background: #f5f5f5;
@@ -10,9 +11,12 @@ const Body = styled.div`
 
 function App() {
   return (
-    <Body>
-      <Products />
-    </Body>
+    <>
+      <Navbar />
+      <Main>
+        <Products />
+      </Main>
+    </>
   );
 }
 

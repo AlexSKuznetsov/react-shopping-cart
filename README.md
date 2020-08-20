@@ -9,7 +9,8 @@ Simple React Shopping Cart
 
 ## Backlog
 
-- [ ] Add Navbar component
+- [x] Add Product component and ProductList page
+- [x] Add Navbar component
 - [ ] Add Cart component
 - [ ] Add seacrh-bar component
 - [ ] Add Footer component
