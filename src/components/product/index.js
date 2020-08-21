@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Price from '../price';
 import AddToCardButton from '../addToCartButton';
 
 const Card = styled.div`
@@ -20,13 +21,6 @@ const Card = styled.div`
       0 10px 10px -5px rgba(0, 0, 0, 0.04);
     border: 0.5px solid blueviolet;
   }
-`;
-
-const ProductPrice = styled.p`
-  @import url('https://fonts.googleapis.com/css?family=Roboto');
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  font-size: 14px;
 `;
 
 const ProductName = styled.div`
@@ -66,7 +60,7 @@ const PlusMinus = styled.button`
   border: 0.5px solid blueviolet;
   text-align: center;
   box-sizing: border-box;
-  border-radius: 50%;
+  border-radius: 2px;
   text-decoration: none;
   line-height: 22px;
   font-size: 20px;
@@ -81,7 +75,7 @@ const PlusMinus = styled.button`
   }
 `;
 
-function Item({ item }) {
+function Product ({ item }) {
   const [count, setCount] = useState(1);
 
   function handleChange(e) {
@@ -107,9 +101,7 @@ function Item({ item }) {
     <Card>
       <ProductName>{item.name}</ProductName>
       <Image src={item.img} alt="broccoli" />
-      <p>Price per 1 kg</p>
-      <ProductPrice>{item.price} р.</ProductPrice>
-
+      <Price price={item.price} />
       <ChangeCount>
         <PlusMinus onClick={decrement}> - </PlusMinus>
         <Count value={count} onChange={handleChange}></Count>
@@ -120,4 +112,4 @@ function Item({ item }) {
   );
 }
 
-export default Item;
+export default Product;

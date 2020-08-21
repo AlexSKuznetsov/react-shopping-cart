@@ -11,8 +11,9 @@ Simple React Shopping Cart
 
 - [x] Add Product component and ProductList page
 - [x] Add Navbar component
+- [ ] Add Tooltip component to show price condition (with React Portal)
 - [ ] Add Cart component
-- [ ] Add seacrh-bar component
+- [ ] Add search-bar component
 - [ ] Add Footer component
 - [ ] Add Redux for state-management
 - [ ] Add TypeScript 
