@@ -17,7 +17,6 @@ const ProductPrice = styled.p`
 `;
 
 export default function Price(props) {
-  console.log(props.price);
 
   return (
     <Container>

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import Tooltip from './tooltip';
+import Portal from './portal';
 
 const Link = styled.a`
   display: flex;
@@ -10,8 +12,8 @@ const Link = styled.a`
 const Icon = styled.svg`
   flex: none;
   transition: fill 0.25s;
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
 
   ${Link}:hover & {
     fill: rebeccapurple;
@@ -19,8 +21,24 @@ const Icon = styled.svg`
 `;
 
 export default function Info() {
+  const [coords, setCoords] = useState({});
+  const [isOn, setIsOn] = useState(false);
+
+  function setCoordAndShowTooltip(e) {
+    const rect = e.target.getBoundingClientRect();
+    setCoords({
+      left: rect.x - 50,
+      top: rect.y - 50,
+    });
+    setIsOn((c) => (c = !c));
+  }
+
   return (
-    <Link>
+    <Link
+      onMouseEnter={setCoordAndShowTooltip}
+      onMouseLeave={() => setIsOn((prev) => (prev = !prev))}
+    >
+      {isOn && (<Portal><Tooltip coords={coords} /></Portal>)}
       <Icon viewBox="0 0 16 16">
         <path
           fillRule="evenodd"
