@@ -10,9 +10,9 @@ const Container = styled.div`
 const ProductPrice = styled.p`
   @import url('https://fonts.googleapis.com/css?family=Roboto');
   font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   color: #666;
-  font-size: 16px;
+  font-size: 18px;
   margin-right: 10px;
 `;
 
