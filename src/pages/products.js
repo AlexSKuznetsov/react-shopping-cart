@@ -8,7 +8,7 @@ const ProductList = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   max-width: 960px;
-  padding: 40px 16px;
+  padding: 60px 16px;
 `;
 
 export default function Products() {
