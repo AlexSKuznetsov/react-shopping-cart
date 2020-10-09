@@ -88,16 +88,12 @@ function Product({ item }) {
   }
 
   function increment() {
-    setCount((prevCount) => {
-      return prevCount + 1;
-    });
+    setCount((prevCount) => prevCount + 1);
   }
 
   function decrement() {
     if (count > 1) {
-      setCount((prevCount) => {
-        return prevCount - 1;
-      });
+      setCount((prevCount) => prevCount - 1);
     }
   }
 
