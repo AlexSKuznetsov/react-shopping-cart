@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { addToCart } from '../../redux/actions/add-to-cart';
+import store from '../../redux/store';
 
 const Button = styled.button`
   width: 120px;
@@ -16,6 +18,10 @@ const Button = styled.button`
   }
 `;
 
-export default function AddToCartButton() {
-  return <Button>Add to cart</Button>;
+export default function AddToCartButton(props) {
+  function handleAddtoCartButton(e) {
+    console.log(props.item);
+    store.dispatch(addToCart({ id: '1', name: 'Cucumber', qty: '1' }));
+  }
+  return <Button onClick={handleAddtoCartButton}>Add to cart</Button>;
 }

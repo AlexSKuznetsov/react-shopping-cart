@@ -107,7 +107,7 @@ function Product ({ item }) {
         <Count value={count} onChange={handleChange}></Count>
         <PlusMinus onClick={increment}> + </PlusMinus>
       </ChangeCount>
-      <AddToCardButton />
+      <AddToCardButton item={item}/>
     </Card>
   );
 }
