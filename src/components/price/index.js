@@ -16,11 +16,10 @@ const ProductPrice = styled.p`
   margin-right: 10px;
 `;
 
-export default function Price(props) {
-
+export default function Price({ price }) {
   return (
     <Container>
-      <ProductPrice>{props.price}р.</ProductPrice>
+      <ProductPrice>{price}р.</ProductPrice>
       <InfoButton />
     </Container>
   );

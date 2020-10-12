@@ -8,7 +8,7 @@ const Card = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 200px;
+  max-width: 300px;
   border: 0.5px solid #a9a9a9;
   margin: 10px;
   padding: 10px;
@@ -20,6 +20,10 @@ const Card = styled.div`
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
       0 10px 10px -5px rgba(0, 0, 0, 0.04);
     border: 0.5px solid blueviolet;
+  }
+
+  @media (max-width: 600px) {
+    width: 400px;
   }
 `;
 
@@ -75,7 +79,7 @@ const PlusMinus = styled.button`
   }
 `;
 
-function Product ({ item }) {
+function Product({ item }) {
   const [count, setCount] = useState(1);
 
   function handleChange(e) {
@@ -84,16 +88,12 @@ function Product ({ item }) {
   }
 
   function increment() {
-    setCount((prevCount) => {
-      return prevCount + 1;
-    });
+    setCount((prevCount) => prevCount + 1);
   }
 
   function decrement() {
     if (count > 1) {
-      setCount((prevCount) => {
-        return prevCount - 1;
-      });
+      setCount((prevCount) => prevCount - 1);
     }
   }
 
