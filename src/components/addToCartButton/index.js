@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { addToCart } from '../../redux/actions/add-to-cart';
+import store from '../../redux/store';
 
 const Button = styled.button`
   width: 120px;
