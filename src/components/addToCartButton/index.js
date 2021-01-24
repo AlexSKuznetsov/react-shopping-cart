@@ -9,6 +9,7 @@ const Button = styled.button`
   border: none;
   color: white;
   border-radius: 2px;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
@@ -16,6 +17,6 @@ const Button = styled.button`
   }
 `;
 
-export default function AddToCartButton() {
-  return <Button>Add to cart</Button>;
+export default function AddToCartButton({ action }) {
+  return <Button onClick={() => action()}>Add to cart</Button>;
 }

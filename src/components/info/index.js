@@ -14,6 +14,7 @@ const Icon = styled.svg`
   transition: fill 0.25s;
   width: 14px;
   height: 14px;
+  cursor: help;
 
   ${Link}:hover & {
     fill: rebeccapurple;
@@ -38,7 +39,11 @@ export default function Info() {
       onMouseEnter={setCoordAndShowTooltip}
       onMouseLeave={() => setIsOn((prev) => (prev = !prev))}
     >
-      {isOn && (<Portal><Tooltip coords={coords} /></Portal>)}
+      {isOn && (
+        <Portal>
+          <Tooltip coords={coords} />
+        </Portal>
+      )}
       <Icon viewBox="0 0 16 16">
         <path
           fillRule="evenodd"

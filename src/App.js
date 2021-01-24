@@ -11,12 +11,12 @@ const Main = styled.div`
 
 function App() {
   return (
-    <>
+    <React.Fragment>
       <Navbar />
       <Main>
         <Products />
       </Main>
-    </>
+    </React.Fragment>
   );
 }
 

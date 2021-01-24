@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { addItemAction } from '../../redux/actions';
 import styled from 'styled-components';
 import Price from '../price';
 import AddToCardButton from '../addToCartButton';
@@ -8,7 +10,7 @@ const Card = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 300px;
+  width: 250px;
   border: 0.5px solid #a9a9a9;
   margin: 10px;
   padding: 10px;
@@ -36,6 +38,7 @@ const ProductName = styled.div`
 
 const Image = styled.img`
   height: 150px;
+  cursor: zoom-in;
 `;
 
 const Count = styled.input`
@@ -68,6 +71,7 @@ const PlusMinus = styled.button`
   text-decoration: none;
   line-height: 22px;
   font-size: 20px;
+  cursor: pointer;
 
   &:hover {
     background-color: blueviolet;
@@ -79,7 +83,7 @@ const PlusMinus = styled.button`
   }
 `;
 
-function Product({ item }) {
+const Product = ({ item, addItemAction }) => {
   const [count, setCount] = useState(1);
 
   function handleChange(e) {
@@ -97,19 +101,29 @@ function Product({ item }) {
     }
   }
 
+  const action = () => {
+    addItemAction(item);
+  };
+
   return (
     <Card>
       <ProductName>{item.name}</ProductName>
-      <Image src={item.img} alt="broccoli" />
+      <Image src={item.img} alt={item.name} />
       <Price price={item.price} />
       <ChangeCount>
         <PlusMinus onClick={decrement}> - </PlusMinus>
         <Count value={count} onChange={handleChange}></Count>
         <PlusMinus onClick={increment}> + </PlusMinus>
       </ChangeCount>
-      <AddToCardButton />
+      <AddToCardButton action={action} />
     </Card>
   );
-}
+};
 
-export default Product;
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart,
+  };
+};
+
+export default connect(mapStateToProps, { addItemAction })(Product);
