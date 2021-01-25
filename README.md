@@ -1,6 +1,6 @@
 # React Shopping Cart
 
-Simple React Shopping Cart
+Simple React Shopping Cart - https://react-shopping-cart-demo.netlify.app
 
 
 ## Dependencies
