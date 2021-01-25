@@ -6,10 +6,10 @@ export const DELETE_ITEM = 'DELETE_ITEM';
 
 // Action creators
 
-export const addItemAction = (item) => {
+export const addItemAction = (item, count) => {
   return {
     type: ADD_ITEM,
-    payload: item,
+    payload: { ...item, count },
   };
 };
 

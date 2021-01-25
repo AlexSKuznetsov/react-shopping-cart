@@ -11,17 +11,16 @@ const Card = styled.div`
   justify-content: center;
   align-items: center;
   width: 250px;
-  border: 0.5px solid #a9a9a9;
   margin: 10px;
   padding: 10px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: white;
 
   &:hover {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
       0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    border: 0.5px solid blueviolet;
+    outline: 0.5px solid blueviolet;
   }
 
   @media (max-width: 600px) {
@@ -102,7 +101,7 @@ const Product = ({ item, addItemAction }) => {
   }
 
   const action = () => {
-    addItemAction(item);
+    addItemAction(item, count);
   };
 
   return (

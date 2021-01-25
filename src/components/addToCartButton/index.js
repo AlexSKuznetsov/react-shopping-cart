@@ -10,6 +10,7 @@ const Button = styled.button`
   color: white;
   border-radius: 2px;
   cursor: pointer;
+  outline: none;
 
   &:hover {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
