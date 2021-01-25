@@ -2,7 +2,6 @@ import React from 'react';
 import Products from './pages/products';
 import Navbar from './components/navbar';
 import styled from 'styled-components';
-import Items from './components/cart';
 
 const Main = styled.div`
   display: flex;
