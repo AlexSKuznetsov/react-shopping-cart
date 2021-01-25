@@ -5,7 +5,9 @@ Simple React Shopping Cart
 
 ## Dependencies
 * Styled-components
-* Redux (in backlog)
+* Redux
+* React-Redux
+* Redux-Thunk
 
 ## Backlog
 
@@ -15,7 +17,7 @@ Simple React Shopping Cart
 - [ ] Add Cart component
 - [ ] Add search-bar component
 - [ ] Add Footer component
-- [ ] Add Redux for state-management
+- [x] Add Redux for state-management
 - [ ] Add TypeScript 
 - [ ] Add Tests (Jest / Enzyme) or may be [React Testing Library](https://github.com/testing-library/react-testing-library)
 - [ ] Try to [Immer](https://github.com/immerjs/immer) for immutable state
