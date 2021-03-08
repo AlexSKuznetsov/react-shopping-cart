@@ -5,7 +5,7 @@ import { cartReducer } from './reducers';
 const storageState = window.localStorage.getItem('state');
 export const initialState = storageState
   ? JSON.parse(storageState)
-  : { items: [], sum: 0 };
+  : { cart: { items: [], sum: 0 } };
 
 const store = createStore(
   combineReducers({
