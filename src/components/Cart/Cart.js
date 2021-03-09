@@ -14,12 +14,23 @@ const PTag = styled.p`
 
 const CartIconBox = styled.div`
   margin-left: 20px;
+  position: relative;
   cursor: pointer;
 `;
 
+const ItemsCount = styled.div`
+  position: absolute;
+  display: inline-block;
+  left: 18px;
+  top: 11px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ff4136;
+`;
+
 const Cart = () => {
-  const cart = useSelector(state => state.cart)
-  
+  const cart = useSelector((state) => state.cart);
+
   function roundToTwo(num) {
     return +(Math.round(num + 'e+2') + 'e-2');
   }
@@ -27,17 +38,17 @@ const Cart = () => {
     <CartBox>
       <div>
         <PTag>
-          No. of items : <b>{cart.items.length}</b>
-        </PTag>
-        <PTag>
-          Sub Total: <b>{roundToTwo(cart.sum)}</b>
+          Sub Total: <b>{roundToTwo(cart.sum)} &#8381;</b>
         </PTag>
       </div>
       <CartIconBox>
+        <ItemsCount>
+          {cart.items.length > 0 ? cart.items.length : null}
+        </ItemsCount>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="40"
+          height="40"
           fill="blueviolet"
           className="bi bi-cart"
           viewBox="0 0 16 16"
