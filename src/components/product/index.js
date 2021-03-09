@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { addItemAction } from '../../redux/actions';
 import styled from 'styled-components';
 import Price from '../price';
@@ -82,8 +82,19 @@ const PlusMinus = styled.button`
   }
 `;
 
-const Product = ({ item, addItemAction }) => {
+const Product = ({ item }) => {
   const [count, setCount] = useState(1);
+  const [isInCart, setIsInCart] = useState(false)
+  const cart = useSelector(state => state.cart)
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const findItemInCart = cart.items.find(el => el.id === item.id)
+  
+    if (findItemInCart) {
+      setIsInCart(true)
+    }
+  }, [cart])
 
   function handleChange(e) {
     const { value } = e.target;
@@ -101,7 +112,8 @@ const Product = ({ item, addItemAction }) => {
   }
 
   const action = () => {
-    addItemAction(item, count);
+    dispatch(addItemAction(item, count));
+    setCount(1)
   };
 
   return (
@@ -114,15 +126,9 @@ const Product = ({ item, addItemAction }) => {
         <Count value={count} onChange={handleChange}></Count>
         <PlusMinus onClick={increment}> + </PlusMinus>
       </ChangeCount>
-      <AddToCardButton action={action} />
+      <AddToCardButton action={action} isInCart={isInCart} />
     </Card>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    cart: state.cart,
-  };
-};
-
-export default connect(mapStateToProps, { addItemAction })(Product);
+export default Product;

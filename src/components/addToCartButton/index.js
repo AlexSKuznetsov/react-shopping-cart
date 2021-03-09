@@ -5,7 +5,7 @@ const Button = styled.button`
   width: 120px;
   padding: 10px;
   margin-bottom: 5px;
-  background-color: blueviolet;
+  background-color: ${(props) => (props.isInCart ? 'grey' : 'blueviolet')};
   border: none;
   color: white;
   border-radius: 2px;
@@ -18,6 +18,11 @@ const Button = styled.button`
   }
 `;
 
-export default function AddToCartButton({ action }) {
-  return <Button onClick={() => action()}>Add to cart</Button>;
+export default function AddToCartButton({ action, isInCart }) {
+  
+  return (
+    <Button isInCart={isInCart} onClick={() => action()}>
+      Add to cart
+    </Button>
+  );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 const CartBox = styled.div`
@@ -17,11 +17,12 @@ const CartIconBox = styled.div`
   cursor: pointer;
 `;
 
-const Cart = ({ cart }) => {
+const Cart = () => {
+  const cart = useSelector(state => state.cart)
+  
   function roundToTwo(num) {
     return +(Math.round(num + 'e+2') + 'e-2');
   }
-  console.log(cart);
   return (
     <CartBox>
       <div>
@@ -48,11 +49,4 @@ const Cart = ({ cart }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return {
-    cart: state.cart,
-  };
-};
-
-export default connect(mapStateToProps)(Cart);
+export default Cart;
