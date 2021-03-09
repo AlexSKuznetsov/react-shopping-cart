@@ -83,18 +83,18 @@ const PlusMinus = styled.button`
 `;
 
 const Product = ({ item }) => {
+  const cart = useSelector((state) => state.cart);
   const [count, setCount] = useState(1);
-  const [isInCart, setIsInCart] = useState(false)
-  const cart = useSelector(state => state.cart)
+  const [isInCart, setIsInCart] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const findItemInCart = cart.items.find(el => el.id === item.id)
-  
+    const findItemInCart = cart.items.find((el) => el.id === item.id);
+
     if (findItemInCart) {
-      setIsInCart(true)
+      setIsInCart(true);
     }
-  }, [cart])
+  }, [cart, item.id]);
 
   function handleChange(e) {
     const { value } = e.target;
@@ -113,7 +113,7 @@ const Product = ({ item }) => {
 
   const action = () => {
     dispatch(addItemAction(item, count));
-    setCount(1)
+    setCount(1);
   };
 
   return (
