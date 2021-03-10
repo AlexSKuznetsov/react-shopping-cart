@@ -29,7 +29,7 @@ export const decrementItemAction = (itemId) => {
 
 export const deleteItemAction = (itemId) => {
   return {
-    type: DECREMENT_ITEM,
+    type: DELETE_ITEM,
     payload: itemId,
   };
 };
