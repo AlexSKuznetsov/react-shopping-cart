@@ -90,9 +90,10 @@ const Product = ({ item }) => {
 
   useEffect(() => {
     const findItemInCart = cart.items.find((el) => el.id === item.id);
-
     if (findItemInCart) {
       setIsInCart(true);
+    } else {
+      setIsInCart(false);
     }
   }, [cart, item.id]);
 
@@ -123,7 +124,7 @@ const Product = ({ item }) => {
       <Price price={item.price} />
       <ChangeCount>
         <PlusMinus onClick={decrement}> - </PlusMinus>
-        <Count value={count} onChange={handleChange}></Count>
+        <Count value={count} onChange={handleChange} min={1} max={99}></Count>
         <PlusMinus onClick={increment}> + </PlusMinus>
       </ChangeCount>
       <AddToCardButton action={action} isInCart={isInCart} />
