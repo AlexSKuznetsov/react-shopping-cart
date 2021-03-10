@@ -3,8 +3,10 @@ import {
   ICREMENT_ITEM,
   DECREMENT_ITEM,
   DELETE_ITEM,
+  SEARCH_ITEMS,
 } from './actions';
 import { initialState } from './store';
+import productsStore from '../store';
 
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -78,5 +80,20 @@ export const cartReducer = (state = initialState, action) => {
       };
     default:
       return state;
+  }
+};
+
+export const searchReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case SEARCH_ITEMS:
+      let newState = []
+      productsStore.forEach((el) => {
+        if (el.name.includes(action.payload)) {
+          newState.push(el);
+        }
+      });
+      return newState;
+    default:
+      return productsStore;
   }
 };

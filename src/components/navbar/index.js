@@ -1,12 +1,13 @@
 import React from 'react';
 import Cart from '../Cart/Cart';
+import Searchbar from '../Searchbar/Searchbar';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
   position: fixed;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   background: #fff;
   padding: 0 15px;
   width: 100%;
@@ -26,6 +27,7 @@ export default function Navbar() {
   return (
     <Nav>
       <Logo>React shopping cart</Logo>
+      <Searchbar />
       <Cart />
     </Nav>
   );

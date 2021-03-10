@@ -1,8 +1,7 @@
 import React from 'react';
-
+import { useSelector } from 'react-redux';
 import Product from '../components/product';
 import styled from 'styled-components';
-import store from '../store';
 
 const ProductList = styled.div`
   display: flex;
@@ -13,10 +12,11 @@ const ProductList = styled.div`
 `;
 
 const Products = () => {
+  const products = useSelector((state) => state.products);
   return (
     <>
       <ProductList>
-        {store.map((item) => (
+        {products.map((item) => (
           <Product key={item.id} item={item}></Product>
         ))}
       </ProductList>

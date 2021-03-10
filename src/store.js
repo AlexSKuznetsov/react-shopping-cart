@@ -1,4 +1,4 @@
-const store = [
+const productsStore = [
   {
     id: 1,
     name: 'Broccoli',
@@ -57,4 +57,4 @@ const store = [
   },
 ];
 
-export default store;
+export default productsStore;
