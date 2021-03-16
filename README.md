@@ -15,11 +15,14 @@ Simple React Shopping Cart - https://react-shopping-cart-demo.netlify.app
 - [x] Add Navbar component
 - [x] Add Tooltip component to show price condition (with React Portal)
 - [x] Add Cart component
-- [x] Add search-bar component
+- [x] Add Search-bar component
+- [ ] Add React-Router for About and Checkout pages
+- [ ] Add Formik for Checkout page
+- [ ] Add React Query for external queries 
 - [ ] Add Footer component
 - [x] Add Redux for state-management
 - [ ] Add TypeScript 
-- [ ] Add Tests (Jest / Enzyme) or may be [React Testing Library](https://github.com/testing-library/react-testing-library)
+- [ ] Add Tests (Jest / Enzyme) or maybe [React Testing Library](https://github.com/testing-library/react-testing-library)
 - [ ] Try to [Immer](https://github.com/immerjs/immer) for immutable state
 - [x] Try to CI/CD for Netlify demployment
 - [ ] Try to [Mock Service Worker](https://github.com/mswjs/msw) for API mocking
