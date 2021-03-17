@@ -9,6 +9,7 @@ const Main = styled.div`
   display: flex;
   justify-content: center;
   background: #f5f5f5;
+  min-height: 800px;
 `;
 
 function App() {

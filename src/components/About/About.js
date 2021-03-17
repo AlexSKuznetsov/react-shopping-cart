@@ -1,34 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { WrapperContainer } from './Wrapper';
 import { TextLink } from './TextLink';
-
-const Main = styled.div`
-  position: relative;
-  top: 100px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-width: 1332px;
-  min-width: 800px;
-  min-height: 100vh;
-  background-color: white;
-`;
+import { DisclaimerBox } from './Disclaimer';
 
 const Header = styled.h1`
   font-weight: bold;
   margin: 20px 20px 0 20px;
   color: blueviolet;
-`;
-
-const Disclaimer = styled.p`
-  color: red;
-  font-size: 18px;
-  max-width: 700px;
-  padding: 20px 20px;
-  margin: 20px;
-  background-color: #f5f5f5;
-  border-radius: 4px;
-  border-left: 5px solid red;
 `;
 
 const Stack = styled.div`
@@ -40,61 +19,45 @@ const Stack = styled.div`
 
 const About = () => {
   return (
-    <Main>
+    <WrapperContainer>
       <Header>About page</Header>
-      <Disclaimer>
-        Disclaimer: this site was not designed for commercial gain, but as a
-        platform for learning new technologies, in particular the React library
-        and its environment.
-      </Disclaimer>
+      <DisclaimerBox>
+        Disclaimer: this site was not designed for commercial purpose, but only
+        as a platform for learning new technologies, in particular the React
+        library and its environment.
+      </DisclaimerBox>
       <Stack>
         <Header>Tech stack:</Header>
         <ul>
           <li>
-            <b>
-              <TextLink target="https://reactjs.org/">React js</TextLink>
-            </b>{' '}
-            with{' '}
-            <b>
-              <TextLink target="https://create-react-app.dev/">
-                Create React App
-              </TextLink>
-            </b>
+            <TextLink target="https://reactjs.org/">React js</TextLink> with
+            Hooks on top of the{' '}
+            <TextLink target="https://create-react-app.dev/">
+              Create React App
+            </TextLink>
           </li>
           <li>
-            <b>
-              <TextLink target="https://cloud.yandex.com/services/storage">
-                Yandex Object Storage
-              </TextLink>
-            </b>{' '}
+            <TextLink target="https://cloud.yandex.com/services/storage">
+              Yandex Object Storage
+            </TextLink>{' '}
             for storing images for items
           </li>
           <li>
-            <b>
-              <TextLink target="https://www.netlify.com/">Netlify</TextLink>
-            </b>{' '}
-            for hosting this site
+            <TextLink target="https://www.netlify.com/">Netlify</TextLink> for
+            hosting this site
           </li>
           <li>
-            <b>
-              <TextLink target="https://styled-components.com/">
-                Styled-components
-              </TextLink>
-            </b>{' '}
+            <TextLink target="https://styled-components.com/">
+              Styled-components
+            </TextLink>{' '}
             for styling things
           </li>
           <li>
-            <b>
-              <TextLink target="https://redux.js.org/">Redux</TextLink>
-            </b>{' '}
-            for state management
+            <TextLink target="https://redux.js.org/">Redux</TextLink> for state
+            management
           </li>
           <li>
-            <b>
-              <TextLink target="https://reactrouter.com/">
-                React Router
-              </TextLink>
-            </b>{' '}
+            <TextLink target="https://reactrouter.com/">React Router</TextLink>{' '}
             for navigation between pages
           </li>
           <li>React Query for external queries (...in progress)</li>
@@ -102,24 +65,20 @@ const About = () => {
           <li>CSS 3 with Flexbox and Grid (items in Cart component)</li>
           <li>
             Browser API for storing cart state (
-            <b>
-              <TextLink target="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">
-                local storage
-              </TextLink>
-            </b>
+            <TextLink target="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">
+              local storage
+            </TextLink>
             )
           </li>
           <li>
-            <b>
-              <TextLink target="https://reactjs.org/docs/portals.html#gatsby-focus-wrapper">
-                React Portal
-              </TextLink>
-            </b>{' '}
+            <TextLink target="https://reactjs.org/docs/portals.html#gatsby-focus-wrapper">
+              React Portal
+            </TextLink>{' '}
             for Tooltip component
           </li>
         </ul>
       </Stack>
-    </Main>
+    </WrapperContainer>
   );
 };
 
