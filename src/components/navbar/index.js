@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import Searchbar from '../Searchbar/Searchbar';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
   position: fixed;
+  z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,12 +23,22 @@ const Logo = styled.span`
   font-weight: bold;
   font-size: 16px;
   color: blueviolet;
+  text-decoration: none;
+`;
+
+const AboutLink = styled(Logo)`
+  margin-left: 40px;
 `;
 
 export default function Navbar() {
   return (
     <Nav>
-      <Logo>React shopping cart</Logo>
+      <Link to="/">
+        <Logo>React shopping cart</Logo>
+      </Link>
+      <Link to="/about">
+        <AboutLink>About</AboutLink>
+      </Link>
       <Searchbar />
       <Cart />
     </Nav>

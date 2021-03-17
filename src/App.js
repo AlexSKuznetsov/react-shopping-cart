@@ -1,6 +1,8 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Products from './pages/products';
 import Navbar from './components/navbar';
+import About from './components/About/About';
 import styled from 'styled-components';
 
 const Main = styled.div`
@@ -11,12 +13,19 @@ const Main = styled.div`
 
 function App() {
   return (
-    <React.Fragment>
+    <Router>
       <Navbar />
-      <Main>
-        <Products />
-      </Main>
-    </React.Fragment>
+      <Switch>
+        <Main>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route exact path="/">
+            <Products />
+          </Route>
+        </Main>
+      </Switch>
+    </Router>
   );
 }
 
