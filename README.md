@@ -16,7 +16,7 @@ Simple React Shopping Cart - https://react-shopping-cart-demo.netlify.app
 - [x] Add Tooltip component to show price condition (with React Portal)
 - [x] Add Cart component
 - [x] Add Search-bar component
-- [ ] Add React-Router for About and Checkout pages
+- [x] Add React-Router for About page
 - [ ] Add Formik for Checkout page
 - [ ] Add React Query for external queries 
 - [ ] Add Footer component
