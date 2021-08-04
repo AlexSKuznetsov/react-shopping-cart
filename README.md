@@ -1,6 +1,6 @@
 # React Shopping Cart
 
-Simple React Shopping Cart - https://react-shopping-cart-demo.netlify.app
+Simple React Shopping Cart - https://react-shopping-cart-demo.netlify.app, or on aws https://master.d3ebrawif3dsj3.amplifyapp.com	
 
 
 ## Dependencies
